@@ -1,7 +1,6 @@
 #include "spreadsheettable.h"
 
 #include <QKeyEvent>
-#include <iostream>
 
 SpreadsheetTable::SpreadsheetTable(QWidget *parent,
                                    int rows,
@@ -23,7 +22,7 @@ void SpreadsheetTable::keyPressEvent(QKeyEvent *event)
 {    
     if (event->modifiers() == Qt::Key_Control && event->key() == Qt::Key_A)
     {
-
+        this->selectAll();
     }
 
     if (event->key() == Qt::Key_Return)
@@ -42,7 +41,6 @@ void SpreadsheetTable::keyPressEvent(QKeyEvent *event)
 
         }
         clearSelection();
-        repaint();
     }
 
     if (event->key() == Qt::Key_Escape)
